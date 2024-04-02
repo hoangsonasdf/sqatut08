@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Hello";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome @ViewBag.user.Email</h1>
+</div>
+<form  action="/Order/Detail">
+    <div class="form-check">
+        @foreach (var item in ViewBag.topping)
+        {
+            <label class="form-check-label" for="topping">Topping:</label>
+            <input class="form-check-input" type="radio" name="Topping" value="@item.Id" /> @item.Name <br />
+        }
+    </div>
+    <div class="form-check">
+        @foreach (var item in ViewBag.size)
+        {
+            <label class="form-check-label" for="size">Size:</label>
+            <input class="form-check-input" type="radio" name="Size" value="@item.Id" /> @item.Name <br />
+        }
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">See detail</button>
+</form>
+

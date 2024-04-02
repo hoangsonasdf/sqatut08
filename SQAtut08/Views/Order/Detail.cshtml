@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Detail";
+}
+
+<form method="post" action="/Order/PlaceOrder">
+    <div class="text-center">
+        <h1 class="display-4">Your pizza size: @ViewBag.size.Name</h1>
+        <h1 class="display-4">Your pizza topping: @ViewBag.topping.Name</h1>
+        <input type="hidden" name="SizeID" value="@ViewBag.size.Id">
+        <input type="hidden" name="ToppingID" value="@ViewBag.topping.Id">
+        <input type="hidden" name="UserID" value="@ViewBag.user.Id">
+
+        <button type="submit" class="btn btn-primary">Place Order</button>
+    </div>
+</form>
+
